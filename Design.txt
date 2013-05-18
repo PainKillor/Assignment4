@@ -1,0 +1,62 @@
+class BinarySearchTree<T>
+	(-) Node root
+	(-) int size
+	(-) int depth
+	
+	(+) BinarySearchTree()
+	(+) BinarySearchTree(T t)
+	(+) BinarySearchTree(Node node)
+	(+) BinarySearchTree(BinarySearchTree<T> bst)
+	
+	(+) Node getRoot()
+	(+) int getSize()
+	(+) int getDepth()
+	
+	(+) void add(T t)
+	(+) void add(Node node)
+		(-) int add(Node current, Node node, int depth) // Returns depth new leaf was added at
+	
+	(+) void remove(T t)
+		(-) void remove(Node parent, Node current, T t)
+		(-) Node getPredecessor(Node current)
+		(-) Node getSuccessor(Node current)
+		
+	(+) boolean contains(T t)
+		(-) boolean contains(Node current, T t)
+		
+	(+) Iterator<T> iterator()
+	(+) BidirectionalIterator<T> bidirectionalIterator()
+	(+) BidirectionalIterator<T> bidirectionalIterator(int start)
+		(-) int generateList(Node current, T[] list, int index)
+
+class Node<T>
+	(-) T t
+	(-) Node left
+	(-) Node right
+	
+	(+) Node()
+	(+) Node(T t)
+	(+) Node(Node node)
+	
+	(+) T getData()
+	(+) void setData(T t)
+	(+) Node getLeft()
+	(+) void setLeft(Node left)
+	(+) Node getRight()
+	(+) void setRight(Node right)
+	
+Interface Iterator<T>
+	(+) boolean hasNext()
+	(+) T next()
+	(+) void nextIndex()
+	(+) void remove()
+
+Interface BidirectionalIterator<T> extends Iterator<T>
+	(+) static final int START_AT_FRONT = 0
+	(+) static final int START_AT_END = 1
+
+	(+) boolean hasPrev()
+	(+) T prev()
+	(+) void prevIndex
+	
+	
